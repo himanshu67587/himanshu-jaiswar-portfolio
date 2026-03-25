@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Nature-inspired light palette */
+    --background: 0.97 0.008 95;
+    --foreground: 0.2 0.03 145;
+    --card: 0.96 0.01 90;
+    --card-foreground: 0.2 0.03 145;
+    --popover: 0.97 0.008 95;
+    --popover-foreground: 0.2 0.03 145;
+    --primary: 0.45 0.14 145;
+    --primary-foreground: 0.97 0.01 145;
+    --secondary: 0.65 0.17 145;
+    --secondary-foreground: 0.97 0.01 145;
+    --muted: 0.9 0.02 145;
+    --muted-foreground: 0.5 0.04 145;
+    --accent: 0.84 0.1 220;
+    --accent-foreground: 0.2 0.03 220;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.025 145;
+    --input: 0.88 0.025 145;
+    --ring: 0.65 0.17 145;
+    --chart-1: 0.65 0.17 145;
+    --chart-2: 0.84 0.1 220;
+    --chart-3: 0.38 0.07 50;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.96 0.01 90;
+    --sidebar-foreground: 0.2 0.03 145;
+    --sidebar-primary: 0.45 0.14 145;
+    --sidebar-primary-foreground: 0.97 0.01 145;
+    --sidebar-accent: 0.9 0.02 145;
+    --sidebar-accent-foreground: 0.2 0.03 145;
+    --sidebar-border: 0.88 0.025 145;
+    --sidebar-ring: 0.65 0.17 145;
+
+    /* Custom nature tokens */
+    --nature-green-deep: 0.45 0.14 145;
+    --nature-green-mid: 0.65 0.17 145;
+    --nature-brown: 0.38 0.07 50;
+    --nature-sky: 0.84 0.1 220;
+    --nature-glass-bg: rgba(31, 42, 36, 0.65);
+    --nature-glass-border: rgba(76, 175, 80, 0.25);
+  }
+
+  .dark {
+    --background: 0.14 0.025 145;
+    --foreground: 0.95 0.01 145;
+    --card: 0.18 0.03 145;
+    --card-foreground: 0.95 0.01 145;
+    --popover: 0.18 0.03 145;
+    --popover-foreground: 0.95 0.01 145;
+    --primary: 0.65 0.17 145;
+    --primary-foreground: 0.14 0.025 145;
+    --secondary: 0.22 0.04 145;
+    --secondary-foreground: 0.95 0.01 145;
+    --muted: 0.22 0.04 145;
+    --muted-foreground: 0.65 0.07 145;
+    --accent: 0.84 0.1 220;
+    --accent-foreground: 0.14 0.025 220;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.65 0.17 145;
+    --chart-1: 0.65 0.17 145;
+    --chart-2: 0.84 0.1 220;
+    --chart-3: 0.38 0.07 50;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.18 0.03 145;
+    --sidebar-foreground: 0.95 0.01 145;
+    --sidebar-primary: 0.65 0.17 145;
+    --sidebar-primary-foreground: 0.14 0.025 145;
+    --sidebar-accent: 0.22 0.04 145;
+    --sidebar-accent-foreground: 0.95 0.01 145;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.65 0.17 145;
+
+    --nature-glass-bg: rgba(15, 25, 18, 0.72);
+    --nature-glass-border: rgba(76, 175, 80, 0.2);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--nature-glass-bg);
+    border: 1px solid var(--nature-glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .pill-btn {
+    @apply rounded-full px-6 py-2.5 font-semibold transition-all duration-300;
+  }
+
+  .section-title {
+    font-family: "Bricolage Grotesque", sans-serif;
+    @apply text-4xl font-extrabold uppercase tracking-widest text-center mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-center text-sm uppercase tracking-widest mb-12 opacity-60;
+  }
+}
+
+@layer utilities {
+  /* Floating leaf animation */
+  @keyframes float-leaf {
+    0% {
+      transform: translateY(-60px) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(110vh) translateX(120px) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes float-leaf-reverse {
+    0% {
+      transform: translateY(-60px) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    80% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(110vh) translateX(-150px) rotate(-540deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin-leaf {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(76, 175, 80, 0.6);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes parallax-drift {
+    0% {
+      background-position: 50% 0%;
+    }
+    100% {
+      background-position: 50% 20%;
+    }
+  }
+
+  .animate-float-leaf {
+    animation: float-leaf linear infinite;
+  }
+  .animate-float-leaf-reverse {
+    animation: float-leaf-reverse linear infinite;
+  }
+  .animate-spin-leaf {
+    animation: spin-leaf 2s linear infinite;
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}
